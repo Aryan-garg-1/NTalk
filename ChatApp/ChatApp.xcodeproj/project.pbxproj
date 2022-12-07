@@ -12,7 +12,6 @@
 		BF0A62692705C220003A4C51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF0A62682705C220003A4C51 /* Assets.xcassets */; };
 		BF0A62752705C235003A4C51 /* MultipeerSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A62732705C235003A4C51 /* MultipeerSession.swift */; };
 		E3540CF3293FE00E00BC0483 /* Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3540CF2293FE00E00BC0483 /* Controls.swift */; };
-		E3646C512940B7DE00836B5A /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3646C502940B7DE00836B5A /* Settings.swift */; };
 		E3CF06E3293FA4B900EF0A99 /* Bubbles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CF06E2293FA4B900EF0A99 /* Bubbles.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +23,6 @@
 		BF0A626D2705C220003A4C51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF0A62732705C235003A4C51 /* MultipeerSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipeerSession.swift; sourceTree = "<group>"; };
 		E3540CF2293FE00E00BC0483 /* Controls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controls.swift; sourceTree = "<group>"; };
-		E3646C502940B7DE00836B5A /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		E3CF06E2293FA4B900EF0A99 /* Bubbles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bubbles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -43,7 +41,6 @@
 			isa = PBXGroup;
 			children = (
 				E3646C4D2940B5E600836B5A /* Chat */,
-				E3646C4C2940B5D800836B5A /* Modals */,
 				BF0A62632705C220003A4C51 /* App */,
 				BF0A62622705C220003A4C51 /* Products */,
 			);
@@ -66,14 +63,6 @@
 				BF0A626D2705C220003A4C51 /* Info.plist */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		E3646C4C2940B5D800836B5A /* Modals */ = {
-			isa = PBXGroup;
-			children = (
-				E3646C502940B7DE00836B5A /* Settings.swift */,
-			);
-			path = Modals;
 			sourceTree = "<group>";
 		};
 		E3646C4D2940B5E600836B5A /* Chat */ = {
@@ -157,7 +146,6 @@
 				BF0A62752705C235003A4C51 /* MultipeerSession.swift in Sources */,
 				BF0A62672705C220003A4C51 /* MainView.swift in Sources */,
 				E3540CF3293FE00E00BC0483 /* Controls.swift in Sources */,
-				E3646C512940B7DE00836B5A /* Settings.swift in Sources */,
 				BF0A62652705C220003A4C51 /* EntryPoint.swift in Sources */,
 				E3CF06E3293FA4B900EF0A99 /* Bubbles.swift in Sources */,
 			);

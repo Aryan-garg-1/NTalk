@@ -88,13 +88,6 @@ struct MainView: View {
                 .navigationTitle("Nearby Broadcast")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar{
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        SettingsButton(isActive: $settingsShown)
-                            .sheet(isPresented: $settingsShown) {
-                                Settings(isPresented: $settingsShown)
-                            }
-                        
-                    }
                     ToolbarItem(placement: .navigationBarLeading) {
                         
                         HStack {
