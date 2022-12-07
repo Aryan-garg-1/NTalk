@@ -44,6 +44,8 @@ struct SettingsButton: View {
 }
 
 struct BottomField: View {
+    var proxy: GeometryProxy
+    
     @Binding var currentMsg: String
     var sendProcedure: ()->Void
     
@@ -60,7 +62,7 @@ struct BottomField: View {
                         Spacer()
                     }
                 }
-                .frame(width: 300.0, height: 40.0)
+                .frame(width: proxy.size.width - 100, height: 40.0)
             
             Spacer()
                 

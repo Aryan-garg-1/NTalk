@@ -58,50 +58,52 @@ struct MainView: View {
     @State var currentMsg: String = ""
     
     var body: some View {
-        NavigationStack {
-            VStack(alignment: .leading) {
-                Divider()
-                
-                ScrollView {
-                    ForEach(chatSession.chatMessages ?? [], id:\.self) { message in
-                        ChatMessage(chat: chatSession.chatMessages, message: message)
-                    }
-                }
-                .frame(width: 370.0)
-                
-                Spacer()
-                Divider()
-                Spacer().frame(height: 13.0)
-                
-                BottomField(currentMsg: $currentMsg, sendProcedure: {
-                    if currentMsg == "" {
-                        return
-                    }
-                        
-                    chatSession.send(msg: currentMsg)
-                    currentMsg = ""
-                })
-                
-            }
-            .padding()
-            .navigationTitle("Nearby Broadcast")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar{
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    SettingsButton(isActive: $settingsShown)
-                        .sheet(isPresented: $settingsShown) {
-                            Settings(isPresented: $settingsShown)
+        GeometryReader { proxy in
+            NavigationStack {
+                VStack(alignment: .leading) {
+                    Divider()
+                    
+                    ScrollView {
+                        ForEach(chatSession.chatMessages ?? [], id:\.self) { message in
+                            ChatMessage(chat: chatSession.chatMessages, message: message)
                         }
+                    }
+                    .frame(width: proxy.size.width - 20)
+                    
+                    Spacer()
+                    Divider()
+                    Spacer().frame(height: 13.0)
+                    
+                    BottomField(proxy: proxy, currentMsg: $currentMsg, sendProcedure: {
+                        if currentMsg == "" {
+                            return
+                        }
+                        
+                        chatSession.send(msg: currentMsg)
+                        currentMsg = ""
+                    })
                     
                 }
-                ToolbarItem(placement: .navigationBarLeading) {
-                    InfoButton(isActive: $infoShown)
-                        .sheet(isPresented: $infoShown) {
-                            ConnectedPeers(isPresented: $infoShown, connectedPeers: chatSession.connectedPeers)
-                        }
+                .padding()
+                .navigationTitle("Nearby Broadcast")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar{
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        SettingsButton(isActive: $settingsShown)
+                            .sheet(isPresented: $settingsShown) {
+                                Settings(isPresented: $settingsShown)
+                            }
+                        
+                    }
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        InfoButton(isActive: $infoShown)
+                            .sheet(isPresented: $infoShown) {
+                                ConnectedPeers(isPresented: $infoShown, connectedPeers: chatSession.connectedPeers)
+                            }
+                    }
                 }
+                
             }
-            
         }
     }
 }
