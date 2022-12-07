@@ -7,24 +7,6 @@
 
 import SwiftUI
 
-struct InfoButton: View {
-    @Binding var isActive: Bool
-    
-    func toggle() -> Void {
-        isActive = true
-    }
-    
-    var body: some View {
-        
-        Button(action: toggle) {
-            Image(systemName: "iphone.gen2.radiowaves.left.and.right.circle.fill")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 28.0)
-        }
-    }
-}
-
 struct SettingsButton: View {
     @Binding var isActive: Bool
     

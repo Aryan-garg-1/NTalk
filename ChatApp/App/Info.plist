@@ -22,8 +22,8 @@
 	<true/>
 	<key>NSBonjourServices</key>
 	<array>
-		<string>_example-color._tcp</string>
-		<string>_example-color._udp</string>
+		<string>_nearby-chat._tcp</string>
+		<string>_nearby-chat._udp</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

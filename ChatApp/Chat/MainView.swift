@@ -96,10 +96,17 @@ struct MainView: View {
                         
                     }
                     ToolbarItem(placement: .navigationBarLeading) {
-                        InfoButton(isActive: $infoShown)
-                            .sheet(isPresented: $infoShown) {
-                                ConnectedPeers(isPresented: $infoShown, connectedPeers: chatSession.connectedPeers)
-                            }
+                        
+                        HStack {
+                            Image(systemName: "iphone.gen2.radiowaves.left.and.right.circle.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .foregroundColor(.accentColor)
+                                .frame(width: 28.0)
+                            
+                            Text("\(chatSession.connectedPeers.count)")
+                                .font(.system(size: 20))
+                        }
                     }
                 }
                 

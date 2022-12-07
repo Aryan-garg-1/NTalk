@@ -12,10 +12,10 @@ struct MessageElementType: Identifiable, Hashable, Codable {
 }
 
 class ChatMultipeerSession: NSObject, ObservableObject {
-    private let serviceType = "example-color"
+    private let serviceType = "nearby-chat"
 
     private let session: MCSession
-    private let myPeerId = MCPeerID(displayName: UIDevice.current.name)
+    private let myPeerId = MCPeerID(displayName: UIDevice.current.localizedModel)
     private let serviceAdvertiser: MCNearbyServiceAdvertiser
     private let serviceBrowser: MCNearbyServiceBrowser
     private let log = Logger()
